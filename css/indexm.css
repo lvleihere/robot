@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5625vw;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: '';
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.end-manage{
+  font-size: 2rem;
+}
+#main-box {
+  width: 100vw;
+  height: 100vh;
+  border: 1px grey solid;
+}
+#main-box h4 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+#main-box #chat-box {
+  wdith: 100vw;
+  height: 80vh;
+  border: 1px grey solid;
+}
+#main-box #chat-box img {
+  width: 4rem;
+  heigth: 4rem;
+  border-radius: 50%;
+  border: 1px green solid;
+}
+#main-box #chat-box ul {
+  width: 100vw;
+  height: 100vw;
+  overflow: auto;
+}
+#main-box #chat-box ul > li + li {
+  display: none;
+}
+#main-box #chat-box ul li.me {
+  margin-top: 10px;
+}
+#main-box #chat-box ul li.me p span {
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px grey solid;
+  float: right;
+  border-radius: 5px;
+  display: block;
+  max-width: 30rem;
+}
+#main-box #chat-box ul li.me p img {
+  vertical-align: -10px;
+  margin-left: 10px;
+  float: right;
+}
+#main-box #chat-box ul li.robot {
+  margin-top: 10px;
+}
+#main-box #chat-box ul li.robot p span {
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px grey solid;
+  float: left;
+  border-radius: 5px;
+  display: block;
+  max-width: 30rem;
+}
+#main-box #chat-box ul li.robot p img {
+  vertical-align: -10px;
+  margin-right: 1rem;
+  float: left;
+}
+#main-box #edit {
+  width: 40rem;
+  height: 5rem;
+  margin: 1rem auto;
+}
+#main-box #edit > input {
+  width: 30rem;
+  height: 5rem;
+  border: 1px green solid;
+  padding-left: 5px;
+  color: green;
+  outline: none;
+  float: right;
+  font-size: 2.5rem;
+}
+#main-box #edit > button {
+  width: 7rem;
+  height: 5rem;
+  display: inline;
+  vertical-align: -1px;
+  float: right;
+  font-size: 2rem;
+}

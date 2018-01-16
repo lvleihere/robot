@@ -1,12 +1,8 @@
 <?php  
 
-$localhost = 'localhost';
-$username = 'wd52130899';
-$password = 'wd52130899';
-$database = 'wd52130899';
+include 'sql.php';
 
 $conn = mysqli_connect($localhost,$username,$password,$database);
-mysqli_query($conn,'set names utf8');
 if(!conn){
 	die('数据库连接失败！');
 }

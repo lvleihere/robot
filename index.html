@@ -1,75 +1,45 @@
-<!--
-* author:lvleiHere
-* time:2017/8/16
-* addr：changshou
-* robotName:xiaoyun
--->
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>你好，我是小云~</title>
 	<meta charset="utf-8">
-	<!-- <link rel="stylesheet" type="text/less" href="./css/index.less"> -->
-	<link rel="stylesheet" type="text/css" href="./css/index.css">
-	<meta name="viewport" content="width=device-width,initial-scale=0.8,maximun-scale=1.0,user-scalable=0">
-	<style type="text/css">
-		/**{
-			outline
-		}*/
+	<title>解析中，请稍后...</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="your keywords">
+	<meta name="description" content="your description">
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 	</style>
 </head>
+
 <body>
-	<div id="main-box">
-		<h4>小云机器人</h4>
-		<div id="chat-box">
-			<ul>
-				<li class="robot"><p class="clearfix"><img src="./image/robot.png"><span>hi~我是小云~family家族的管家</span></p></li>
-			</ul>
-		</div>
-		<div id="edit">
-			<button>发送</button><input type="text" id="text" autofocus>
-		</div>
-		<a href="insert.html" style="font-size: 12px">后台管理</a>
-	</div>
-	<!-- <script type="text/javascript" src="./js/less.min.js"></script> -->
-	<script type="text/javascript" src="./js/jquery.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			var btn = $('button');
-			var ipt = $('#text');
-			btn.click(robot);
-			document.onkeydown=function(e){
-				var keycode=document.all?event.keyCode:e.which;
-				if(keycode==13){
-					robot();
+	<script>
+		(function () {
+			function IsPC() {
+				var userAgentInfo = navigator.userAgent;
+				var Agents = ["Android", "iPhone",
+					"SymbianOS", "Windows Phone",
+					"iPad", "iPod"
+				];
+				var flag = true;
+				for (var v = 0; v < Agents.length; v++) {
+					if (userAgentInfo.indexOf(Agents[v]) > 0) {
+						flag = false;
+						break;
+					}
 				}
+				return flag;
 			}
-			function robot(){
-				var text = ipt.val();
-				var uls = $('ul');
-				if(text==''){
-					alert('还是写点东西吧~');
-				}else{
-					var meWord = $('<li class="me"><p class="clearfix"><img src="./image/me.png"><span>'+text+'</span></p></li>');
-					uls.append(meWord);
-					ipt.val('');
-					$('ul>li.me').fadeIn(500);
-					$.ajax({
-						url:'./php/chat.php',
-						type:'POST',
-						data:{
-							msg:text
-						},
-						success:function(data){
-							var robotWord = $('<li class="robot"><p class="clearfix"><img src="./image/robot.png"><span>'+data+'</span></p></li>');
-							uls.append(robotWord);
-							$('ul>li.robot').fadeIn(1000);
-							uls.scrollTop(uls[0].scrollHeight);
-						}
-					})
-				}
-			}
-		})
+			window.location.href = (IsPC()) ? location.href + 'p' : location.href + 'm';
+		})()
 	</script>
 </body>
+
 </html>
